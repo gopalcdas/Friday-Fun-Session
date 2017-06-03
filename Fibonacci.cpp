@@ -15,7 +15,7 @@ int FibonacciLinear(int n, int &opCounter)
   int previousPrevious = 0;
   int immediatePrevious = 1;	
 
-  for(int i=1; i<=n; i++)
+  for(int i=2; i<=n; i++)
   {
     opCounter++;
 		
@@ -33,7 +33,7 @@ int FibonacciExponential(int n, int &opCounter)
   opCounter++;
 
   if(n == 0 || n == 1)
-    return 1;
+    return n;
 
   return FibonacciExponential(n-1, opCounter) + FibonacciExponential(n-2, opCounter);
 }
