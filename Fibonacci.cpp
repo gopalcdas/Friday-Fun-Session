@@ -41,7 +41,7 @@ int FibonacciExponential(int n, int &opCounter)
 int main( )  
 {
   int opCounter = 0;
-  int n = 10;
+  int n = 40; // execution time, roughly 10 seconds
   int result;
 
   clock_t tStart = clock();
