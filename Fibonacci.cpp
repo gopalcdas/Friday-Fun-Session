@@ -1,41 +1,41 @@
 // Fibonacci.cpp : Defines the entry point for the console application.
 //
 
-#include <iostream>  
+#include <iostream>
 #include <time.h>
 
 int FibonacciLinear(int n, int &opCounter)
 {
-	opCounter++;
+  opCounter++;
 	
-	if(n == 0 || n == 1)
-		return n;
+  if(n == 0 || n == 1)
+    return n;
 
-	int result = 0;
-	int previousPrevious = 0;
-	int immediatePrevious = 1;	
+  int result = 0;
+  int previousPrevious = 0;
+  int immediatePrevious = 1;	
 
-	for(int i=1; i<=n; i++)
-	{
-		opCounter++;
+  for(int i=1; i<=n; i++)
+  {
+    opCounter++;
 		
-		result = immediatePrevious + previousPrevious;
+    result = immediatePrevious + previousPrevious;
 
-		previousPrevious = immediatePrevious;
-		immediatePrevious = result;
-	}
+    previousPrevious = immediatePrevious;
+    immediatePrevious = result;
+  }
 	
-	return result;;
+  return result;;
 }
 
 int FibonacciExponential(int n, int &opCounter)
 {
-	opCounter++;
+  opCounter++;
 
-	if(n == 0 || n == 1)
-		return 1;
+  if(n == 0 || n == 1)
+    return 1;
 
-	return FibonacciExponential(n-1, opCounter) + FibonacciExponential(n-2, opCounter);
+  return FibonacciExponential(n-1, opCounter) + FibonacciExponential(n-2, opCounter);
 }
 
 int main( )  
@@ -47,9 +47,9 @@ int main( )
   clock_t tStart = clock();
   result = FibonacciExponential(n, opCounter);
   printf("Answer: %d\nNumber of operations: %d\n", result, opCounter);
-	printf("Time taken (Exponential): %.2fs\n\n", (double)(clock() - tStart)/CLOCKS_PER_SEC);
+  printf("Time taken (Exponential): %.2fs\n\n", (double)(clock() - tStart)/CLOCKS_PER_SEC);
 
-	tStart = clock();
+  tStart = clock();
   opCounter = 0;
   result = FibonacciLinear(n, opCounter);
   printf("Answer: %d\nNumber of operations: %d\n", result, opCounter);
