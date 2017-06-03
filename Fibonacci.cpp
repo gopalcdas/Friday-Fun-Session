@@ -1,5 +1,6 @@
-// Fibonacci.cpp : Defines the entry point for the console application.
-//
+// Fibonacci.cpp
+// 2nd Friday Fun Session – 13th Jan 2017
+// https://gopalcdas.wordpress.com/2017/06/03/finding-fibonacci-exponential-vs-linear/
 
 #include <iostream>
 #include <time.h>
