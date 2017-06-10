@@ -13,7 +13,7 @@ void StockDpN(double price[], int n, double &maxProfit)
   for(int i=1; i<n; i++)
   {
     if(price[i] - minPriceSoFar > maxProfit)
-		  maxProfit = price[i] - minPriceSoFar;
+      maxProfit = price[i] - minPriceSoFar;
 
     if(price[i] < minPriceSoFar)
       minPriceSoFar = price[i];
@@ -46,7 +46,7 @@ int main()
   else
     printf("Don't buy stock!\n\n");
 
-	// convert price to profit/loss array
+  // convert price to profit/loss array
   double *profit = new double[n];	
   profit[0] = 0;
   for(int i=1; i<n; i++)
