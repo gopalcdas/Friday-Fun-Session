@@ -1,6 +1,6 @@
 // StockProfitKadane.cpp
 // 21st Friday Fun Session – 9th Jun 2017
-// 
+// https://gopalcdas.wordpress.com/2017/06/10/maximum-subarray-problem/
 
 #include <stdio.h>
 #include <limits>  
