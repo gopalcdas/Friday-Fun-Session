@@ -1,4 +1,4 @@
-//13ᵗʰ Dec 2018 (82ᶰᵈ) - BST to Doubly Linked List
+//13ᵗʰ Dec 2018 (82ᶰᵈ) - Binary Tree to Doubly Linked List
 
 #include <iostream>
 
