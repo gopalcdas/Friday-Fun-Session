@@ -6,111 +6,111 @@ using namespace std;
 
 struct BiNode
 {
-	int val;
+    int val;
 
-	BiNode *left;  // head
-	BiNode *right; // tail
+    BiNode *left;  // head
+    BiNode *right; // tail
 };
 
 BiNode *CreateNode(int val)
 {
-	BiNode *n = new BiNode();
+    BiNode *n = new BiNode();
 	
-	n->val = val;
-	n->left = NULL;
-	n->right = NULL;
+    n->val = val;
+    n->left = NULL;
+    n->right = NULL;
 
-	return n;
+    return n;
 }
 
 BiNode *CreateTree()
 {
-	BiNode *root = CreateNode(20);
-	root->left = CreateNode(10);
-	root->left->left = CreateNode(5);
-	root->left->right = CreateNode(15);
-	root->right = CreateNode(30);
-	root->right->left = CreateNode(25);
-	root->right->right = CreateNode(35);
+    BiNode *root = CreateNode(20);
+    root->left = CreateNode(10);
+    root->left->left = CreateNode(5);
+    root->left->right = CreateNode(15);
+    root->right = CreateNode(30);
+    root->right->left = CreateNode(25);
+    root->right->right = CreateNode(35);
 
-	return root;
+    return root;
 }
 
 BiNode * BuildMidNode(BiNode *root)
 {
-	root->left = root;
-	root->right = root;
+    root->left = root;
+    root->right = root;
 
-	return root;
+    return root;
 }
 
 BiNode *Merge(BiNode *leftHead, BiNode *rightHead)
 {
-	BiNode *leftTail = leftHead->left;
-	BiNode *rightTail = rightHead->left;
+    BiNode *leftTail = leftHead->left;
+    BiNode *rightTail = rightHead->left;
 
-	leftTail->right = rightHead;
-	rightTail->right = leftHead;
+    leftTail->right = rightHead;
+    rightTail->right = leftHead;
 
-	leftHead->left = rightTail;
+    leftHead->left = rightTail;
 
-	return leftHead;
+    return leftHead;
 }
 
 BiNode *Merge(BiNode *leftHead, BiNode *midNode, BiNode *rightHead)
 {
-	BiNode *result = leftHead == NULL ? midNode : Merge(leftHead, midNode);
-	result = rightHead == NULL ? result : Merge(result, rightHead);
+    BiNode *result = leftHead == NULL ? midNode : Merge(leftHead, midNode);
+    result = rightHead == NULL ? result : Merge(result, rightHead);
 
-	return result;
+    return result;
 }
 
 BiNode *BuildLl(BiNode *root)
 {
-	if (root == NULL)
-		return NULL;	
+    if (root == NULL)
+        return NULL;	
 
-	BiNode* leftHead = BuildLl(root->left);
-	BiNode* rightHead = BuildLl(root->right);
+    BiNode* leftHead = BuildLl(root->left);
+    BiNode* rightHead = BuildLl(root->right);
 	
-	BiNode* midNode = BuildMidNode(root);
+    BiNode* midNode = BuildMidNode(root);
 
-	return Merge(leftHead, midNode, rightHead);
+    return Merge(leftHead, midNode, rightHead);
 }
 
 void PrintLl(BiNode *head)
 {
-	if (head == NULL)
-	{
-		cout << "empty list" << endl;
-		return;
-	}
+    if (head == NULL)
+    {
+        cout << "empty list" << endl;
+        return;
+    }
 
-	BiNode *tail = head->left;
-	BiNode *node = head;
+    BiNode *tail = head->left;
+    BiNode *node = head;
 
-	while (1)
-	{
-		cout << node->val << " ";
+    while (1)
+    {
+        cout << node->val << " ";
 
-		if (node == tail)
-			break;
+        if (node == tail)
+            break;
 
-		node = node->right;
-	}
+        node = node->right;
+    }
 
-	cout << endl;
+    cout << endl;
 }
 
 int main()
 {
-	BiNode *root = CreateTree();
+    BiNode *root = CreateTree();
 
-	BiNode *head = BuildLl(root);
+    BiNode *head = BuildLl(root);
 
-	PrintLl(head);
+    PrintLl(head);
 
-	getchar();
+    getchar();
 
-	return 0;
+    return 0;
 }
