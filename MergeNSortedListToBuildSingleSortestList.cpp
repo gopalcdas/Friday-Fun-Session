@@ -1,4 +1,4 @@
-//3rd Feb 2017 (4th) - Sort and Merge n Sorted Lists, Each Having m Numbers
+//3rd Feb 2017 (4th) - Merge n Sorted Lists, Each Having m Numbers, into a Sorted List
 
 #include "stdio.h"
 #include <iostream>
