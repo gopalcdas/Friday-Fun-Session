@@ -1,11 +1,9 @@
-// ConsoleApplication1.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+//3rd Feb 2017 (4th) - Sort and Merge n Sorted Lists, Each Having m Numbers
 
 #include "stdio.h"
 #include <iostream>
 #include <vector>
 #include <queue>
-//#include <algorithm>
 
 using namespace std;
 
