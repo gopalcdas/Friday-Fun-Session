@@ -47,13 +47,13 @@ Node *BuildTree()
   return root;
 }
 
-int IsBst(Node *root)
+int IsBbt(Node *root)
 {
   if (root == NULL)
     return 0;
 
-  int lc = IsBst(root->l);
-  int rc = IsBst(root->r);
+  int lc = IsBbt(root->l);
+  int rc = IsBbt(root->r);
 
   if (abs(lc - rc) > MaxAllowedDiff)
     return INT_MIN;
@@ -65,7 +65,7 @@ int main()
 {
   Node *root = BuildTree();
 
-  int len = IsBst(root);
+  int len = IsBbt(root);
 
   if (len == INT_MIN)
     cout << "unbalanced";
